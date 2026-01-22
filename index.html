@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Gemini 3 - 下一代原生多模态AI模型 | 深度解析与应用</title>
+    <meta name="description" content="全面解读 Google Gemini 3 模型。包含 Gemini 3 Pro 与 Flash 的最新特性、Deep Think 深度推理能力、LMArena 榜首表现及企业级应用场景。探索 AI 的未来。">
+    <meta name="keywords" content="Gemini 3, Google Gemini, Gemini 3 Pro, Gemini 3 Flash, Deep Think, AI模型, 人工智能, 多模态, LLM, 谷歌AI">
+    <meta name="author" content="Gemini AI CN">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.geminiai.cn.com/">
+    <meta property="og:title" content="Google Gemini 3 - 下一代原生多模态AI模型">
+    <meta property="og:description" content="Google 最强大的 AI 模型 Gemini 3 现已发布。具备 Deep Think 深度推理、原生多模态理解与卓越的代码生成能力。">
+    <meta property="og:image" content="images/og-gemini3.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Google Gemini 3 - 下一代原生多模态AI模型">
+    <meta property="twitter:description" content="Google 最强大的 AI 模型 Gemini 3 现已发布。具备 Deep Think 深度推理、原生多模态理解与卓越的代码生成能力。">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="canonical" href="https://www.geminiai.cn.com/">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Google Gemini 3",
+      "applicationCategory": "AI Model",
+      "operatingSystem": "Cloud",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Google Gemini 3 is the latest multimodal AI model featuring Deep Think reasoning capabilities."
+    }
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c7c42410807c656c6671dc0eacb56eeb";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container">
+            <div class="logo">Gemini <span>3</span></div>
+            <ul class="nav-links">
+                <li><a href="#overview">概览</a></li>
+                <li><a href="#models">模型系列</a></li>
+                <li><a href="#features">核心特性</a></li>
+                <li><a href="#applications">行业应用</a></li>
+                <li><a href="#developers">开发者</a></li>
+                <li><a href="#benchmarks">基准测试</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+            <a href="https://ai.google.dev/" target="_blank" class="btn btn-primary">试用 Gemini 3</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <span class="badge-new">2026 最新发布</span>
+                <h1>Google Gemini 3 <br><span>重塑智能的边界</span></h1>
+                <p class="hero-desc">原生多模态，搭载革命性的 "Deep Think" 深度推理引擎。<br>在 LMArena 斩获 1501 Elo 分数，树立 AI 性能新标杆。</p>
+                <div class="hero-btns">
+                    <a href="#overview" class="btn btn-primary">了解详情</a>
+                    <a href="#models" class="btn btn-outline">对比模型</a>
+                </div>
+            </div>
+            <div class="hero-background"></div>
+        </section>
+
+        <!-- Overview Section -->
+        <section id="overview" class="section-overview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>什么是 Gemini 3？</h2>
+                    <p>Google DeepMind 团队的最新杰作，专为复杂推理与多模态交互而生。</p>
+                </div>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>Deep Think 推理</h3>
+                        <p>引入类似 System 2 的慢思考模式，在处理复杂数学、编程及逻辑问题时，准确率大幅提升。</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>原生多模态</h3>
+                        <p>不仅是文本。Gemini 3 从底层开始即针对图像、音频、视频和代码进行联合训练，理解能力无缝衔接。</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>超长上下文</h3>
+                        <p>支持 100万+ Token 的上下文窗口，轻松处理整本书籍、大型代码库或长达数小时的视频内容。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Models Section -->
+        <section id="models" class="section-models">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Gemini 3 模型家族</h2>
+                    <p>满足不同场景的性能与效率需求</p>
+                </div>
+                <div class="models-comparison">
+                    <div class="model-card pro">
+                        <div class="card-header">
+                            <h3>Gemini 3 Pro</h3>
+                            <span class="tag">旗舰版</span>
+                        </div>
+                        <p class="model-desc">最强通用模型，并在推理能力上达到SOTA水平。</p>
+                        <ul>
+                            <li><strong>适用场景：</strong> 复杂指令遵循、创意写作、数据分析、高级编码。</li>
+                            <li><strong>主要特性：</strong> Deep Think 模式，微调优化的多模态理解。</li>
+                            <li><strong>当前状态：</strong> 已在 Gemini Advanced 及 API 中可用。</li>
+                        </ul>
+                    </div>
+                    <div class="model-card flash">
+                        <div class="card-header">
+                            <h3>Gemini 3 Flash</h3>
+                            <span class="tag">高效率</span>
+                        </div>
+                        <p class="model-desc">速度与成本的完美平衡，响应极快。</p>
+                        <ul>
+                            <li><strong>适用场景：</strong> 高频任务、实时对话、大规模文本处理、提取摘要。</li>
+                            <li><strong>主要特性：</strong> 极低的延迟，优秀的性价比，足以应对绝大多数日常任务。</li>
+                            <li><strong>当前状态：</strong> 默认集成于 Search 和免费版 Gemini。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Features -->
+        <section id="features" class="section-features">
+            <div class="container">
+                <div class="feature-row">
+                    <div class="feature-text">
+                        <h3>Agentic Capabilities: 真正的智能体</h3>
+                        <p>Gemini 3 不仅仅是一个聊天机器人。它具备了更强的<strong>规划（Planning）</strong>和<strong>工具使用（Tool Use）</strong>能力。</p>
+                        <p>在企业级应用中，Gemini 3 可以自主分解复杂任务，调用外部 API，甚至执行多步操作来完成如“预定差旅并生成报销单”等端到端的工作流。</p>
+                    </div>
+                    <div class="feature-visual">
+                        <img src="images/agentic-workflow.svg" alt="Agentic Workflow Diagram" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                    </div>
+                </div>
+                <div class="feature-row reverse">
+                    <div class="feature-text">
+                        <h3>视觉与空间推理</h3>
+                        <p>得益于原生多模态架构，Gemini 3 Pro Image Preview 版本展示了惊人的视觉理解力。</p>
+                        <p>它不仅能描述图片，还能理解空间关系，甚至通过观察 UI 界面截图来编写对应的前端代码，极大地加速了开发原型设计的流程。</p>
+                    </div>
+                    <div class="feature-visual">
+                        <img src="images/multimodal-io.svg" alt="Multimodal Input/Output Diagram" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications Section -->
+        <section id="applications" class="section-applications">
+            <div class="container">
+                <div class="section-header">
+                    <h2>行业应用场景</h2>
+                    <p>Gemini 3 正在重塑各行各业的工作方式</p>
+                </div>
+                <div class="applications-grid">
+                    <div class="app-card">
+                        <div class="app-icon">⚕️</div>
+                        <h3>医疗健康</h3>
+                        <p>辅助医生分析 X 光片与 CT 影像，快速查阅海量医学文献，提供辅助诊断建议，大幅缩短诊断时间。</p>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">📊</div>
+                        <h3>金融分析</h3>
+                        <p>Deep Think 模式可深入分析财报数据，预测市场趋势，并自动生成风险评估报告，助力精准投资决策。</p>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon">💻</div>
+                        <h3>软件开发</h3>
+                        <p>从需求文档直接生成代码框架，或通过截图修复 UI Bug。Gemini 3 是全能的结对编程伙伴。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer Resources Section -->
+        <section id="developers" class="section-developers">
+            <div class="container">
+                <div class="section-header">
+                    <h2>开发者中心</h2>
+                    <p>只需几行代码，即可集成最先进的 AI 能力</p>
+                </div>
+                <div class="dev-content">
+                    <div class="code-block-wrapper">
+                        <div class="code-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="lang">Python</span>
+                        </div>
+                        <pre><code>
+import google.generativeai as genai
+
+model = genai.GenerativeModel('gemini-3-pro')
+
+# 开启 Deep Think 深度推理模式
+response = model.generate_content(
+    "分析这份复杂的财务报表并预测下季度趋势...",
+    generation_config={"thinking_mode": "deep_think"}
+)
+
+print(response.text)
+                        </code></pre>
+                    </div>
+                    <div class="dev-text">
+                        <h3>API 优先设计</h3>
+                        <p>Gemini 3 API 提供了丰富的功能，包括结构化输出（JSON Mode）、函数调用（Function Calling）以及上下文缓存（Context Caching）。</p>
+                        <a href="https://ai.google.dev/docs" target="_blank" class="btn btn-primary">查看 API 文档</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benchmarks -->
+        <section id="benchmarks" class="section-benchmarks">
+            <div class="container">
+                <div class="section-header">
+                    <h2>性能基准测试</h2>
+                    <p>数据见证实力，Gemini 3 在多项权威测试中刷新记录。</p>
+                </div>
+                <div class="benchmark-table-wrapper">
+                    <table class="benchmark-table">
+                        <thead>
+                            <tr>
+                                <th>基准测试 (Benchmark)</th>
+                                <th>Gemini 3 Pro</th>
+                                <th>Gemini 2.5 Pro</th>
+                                <th>GPT-4o / Other</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>LMArena Elo</strong> (综合排名)</td>
+                                <td class="highlight">1501</td>
+                                <td>1450~</td>
+                                <td>1300~1400</td>
+                            </tr>
+                            <tr>
+                                <td><strong>GPQA Diamond</strong> (研究生级问答)</td>
+                                <td class="highlight">91.9%</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Humanity's Last Exam</strong> (超高难度)</td>
+                                <td class="highlight">~40%</td>
+                                <td>< 30%</td>
+                                <td>< 30%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="benchmark-note">*注：数据基于 Google 2025年发布的官方技术报告及第三方早期测试结果。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section-testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2>用户评价</h2>
+                    <p>来自行业先行者的真实反馈</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p class="quote">"Gemini 3 的多模态理解能力彻底改变了我们的视频编辑工作流，它能精准理解视频内容并生成脚本。"</p>
+                        <div class="author">
+                            <span class="name">Sarah L.</span>
+                            <span class="role">创意总监, MediaFlow</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">"Deep Think 模式在处理复杂的供应链优化问题时展现出了惊人的逻辑能力，准确率远超预期。"</p>
+                        <div class="author">
+                            <span class="name">David Chen</span>
+                            <span class="role">CTO, LogisticsAI</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">"作为开发者，我最喜欢它的 API 响应速度和结构化输出能力，集成过程非常顺滑。"</p>
+                        <div class="author">
+                            <span class="name">Elena R.</span>
+                            <span class="role">全栈工程师, TechStart</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section for SEO -->
+        <section id="faq" class="section-faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题 (FAQ)</h2>
+                </div>
+                <div class="faq-list">
+                    <article class="faq-item">
+                        <h3>Gemini 3 什么时候发布？</h3>
+                        <p>Gemini 3 Pro Preview 于 2025年11月首次亮相，随后的 Gemini 3 Flash 版本于同年12月推出。目前已通过 Google AI Studio 和 Vertex AI 向开发者和企业用户开放。</p>
+                    </article>
+                    <article class="faq-item">
+                        <h3>Gemini 3 相比 Gemini 2 有什么提升？</h3>
+                        <p>最大的提升在于引入了 Deep Think 深度推理模式，使其在数学、逻辑和编程任务上的准确率显著提高。此外，其原生多模态处理能力更强，响应速度在 Flash 版本中得到了进一步优化。</p>
+                    </article>
+                    <article class="faq-item">
+                        <h3>如何使用 Gemini 3？</h3>
+                        <p>普通用户可以通过 Google 的 Gemini App 体验（通常默认搭载 Flash 模型，Advanced 订阅用户可使用 Pro 模型）。开发者可以通过 Google AI Studio 获取 API Key 进行调用。</p>
+                    </article>
+                    <article class="faq-item">
+                        <h3>Gemini 3 的定价策略是怎样的？</h3>
+                        <p>Gemini 3 Flash 提供极具竞争力的低成本选项，适合大规模部署。Pro 版本虽然成本较高，但提供了最顶级的推理能力。此外，Google AI Studio 为开发者提供了一定的免费每日配额。</p>
+                    </article>
+                    <article class="faq-item">
+                        <h3>我的数据隐私安全吗？</h3>
+                        <p>Google 遵循严格的企业级数据隐私标准。通过付费 API 或企业版提交的数据默认不会用于训练未来的模型，确保您的商业机密和用户隐私得到充分保护。</p>
+                    </article>
+                    <article class="faq-item">
+                        <h3>Gemini 3 支持哪些语言？</h3>
+                        <p>Gemini 3 拥有卓越的多语言能力，支持全球 100 多种语言的流利对话与翻译，包括中文、英语、日语、韩语、西班牙语等，并能理解特定语言的文化细微差别。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col about">
+                    <div class="footer-logo">Gemini <span>3</span></div>
+                    <p>本站为非官方资讯站点，旨在整理和介绍 Google Gemini 3 模型的最新技术进展。</p>
+                </div>
+                <div class="footer-col resources">
+                    <h4>官方资源</h4>
+                    <ul>
+                        <li><a href="https://deepmind.google/technologies/gemini/" target="_blank">Google DeepMind</a></li>
+                        <li><a href="https://gemini.google.com/" target="_blank">Gemini 官网</a></li>
+                        <li><a href="https://ai.google.dev/" target="_blank">Google AI Studio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col legal">
+                    <h4>法律条款</h4>
+                    <ul>
+                        <li><a href="https://policies.google.com/privacy" target="_blank">隐私政策</a></li>
+                        <li><a href="https://policies.google.com/terms" target="_blank">服务条款</a></li>
+                        <li><a href="https://support.google.com/gemini" target="_blank">帮助中心</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Gemini AI CN Info. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
