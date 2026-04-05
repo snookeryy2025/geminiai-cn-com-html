@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.geminiai.cn.com/sitemap.xml
+Sitemap: https://www.geminiai-cn.com/sitemap.xml
