@@ -79,6 +79,35 @@ ul {
     box-shadow: 0 0 15px rgba(138, 180, 248, 0.2);
 }
 
+.btn-cta {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: #000000;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.btn-cta:hover {
+    box-shadow: 0 0 25px rgba(138, 180, 248, 0.4);
+    transform: translateY(-1px);
+}
+
+.nav-cta-link {
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    background: rgba(138, 180, 248, 0.05);
+    transition: all 0.3s ease;
+}
+
+.nav-cta-link:hover {
+    background: rgba(138, 180, 248, 0.2);
+    box-shadow: 0 0 15px rgba(138, 180, 248, 0.2);
+    color: var(--primary-color);
+}
+
 /* Header */
 .site-header {
     height: 64px;
@@ -623,6 +652,79 @@ pre {
     padding-top: 32px;
 }
 
+/* Hero Quick Access Cards */
+.hero-quick-access {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 48px;
+    flex-wrap: wrap;
+}
+
+.quick-access-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 32px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    cursor: pointer;
+}
+
+.quick-access-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.quick-access-card.lazy {
+    border-color: rgba(138, 180, 248, 0.3);
+}
+
+.quick-access-card.lazy:hover {
+    border-color: rgba(138, 180, 248, 0.6);
+    background: rgba(138, 180, 248, 0.08);
+}
+
+.quick-access-card.huoya {
+    border-color: rgba(253, 214, 99, 0.3);
+}
+
+.quick-access-card.huoya:hover {
+    border-color: rgba(253, 214, 99, 0.6);
+    background: rgba(253, 214, 99, 0.08);
+}
+
+.quick-access-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 6px;
+}
+
+.quick-access-tag {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.quick-access-link {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.quick-access-card.lazy .quick-access-link {
+    color: var(--primary-color);
+}
+
+.quick-access-card.huoya .quick-access-link {
+    color: #fdd663;
+}
+
 /* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
     .dev-content {
@@ -641,6 +743,21 @@ pre {
     
     .nav-links {
         display: none;
+    }
+
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .hero-btns .btn-outline {
+        margin-left: 0;
+    }
+
+    .hero-btns .btn-cta {
+        margin-left: 0;
     }
 
     .feature-row, .feature-row.reverse {
