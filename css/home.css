@@ -1,0 +1,60 @@
+/* Preserve the homepage's existing brand and layouts while accommodating current content. */
+.home-page { color-scheme: dark; }
+.home-page .home-link { color: var(--primary-color); }
+.home-page .home-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.home-page .hero { padding: 80px 0 72px; }
+.home-page .hero h1 { line-height: 1.25; }
+.home-page .hero-desc { max-width: 850px; line-height: 1.85; font-size: 18px; }
+.home-page .hero-desc strong { color: var(--text-color); font-weight: 600; }
+.home-page .nav-links { gap: 20px; }
+.home-page .site-header .btn, .home-page .logo, .home-page .nav-links a { white-space: nowrap; }
+.home-page .section-header { margin-bottom: 40px; }
+.home-page .section-header .home-link { display: inline-block; margin-top: 18px; }
+.home-page .models-comparison { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.home-page .model-card { padding: 30px; min-width: 0; }
+.home-page .card-header { align-items: flex-start; gap: 16px; }
+.home-page .card-header h3 { font-size: 25px; }
+.home-page .tag { flex-shrink: 0; }
+.home-page .model-card li { overflow-wrap: anywhere; }
+.home-page .model-card .home-link { display: inline-block; margin-top: 14px; }
+.home-page .overview-grid, .home-page .applications-grid, .home-page .testimonials-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.home-page .app-card { text-align: left; }
+.home-page .app-card h3, .home-page .testimonial-card h3 { color: var(--primary-color); margin-bottom: 18px; font-size: 20px; }
+.home-page .app-card p, .home-page .testimonial-card p { color: var(--text-light); line-height: 1.9; }
+.home-page .app-card .home-link { display: inline-block; margin-top: 22px; font-size: 14px; }
+.home-page .home-note { color: var(--text-light); font-size: 14px; line-height: 1.9; margin-top: 28px; }
+.home-page .feature-text h2 { font-size: 30px; line-height: 1.4; margin-bottom: 24px; }
+.home-page .feature-visual { min-width: 0; }
+.home-page .feature-visual img { width: 100%; height: 100%; object-fit: contain; padding: 16px; }
+.home-page .benchmark-table { min-width: 720px; }
+.home-page .benchmark-table caption { text-align: left; padding: 16px 20px; color: var(--text-light); }
+.home-page .benchmark-table tbody th { background: transparent; font-weight: 500; color: var(--primary-color); }
+.home-page .dev-content > * { min-width: 0; }
+.home-page .code-block-wrapper { max-width: 100%; }
+.home-page [id] { scroll-margin-top: 88px; }
+.home-page :focus-visible { outline: 2px solid var(--primary-color); outline-offset: 5px; }
+@media (max-width: 1100px) {
+    .home-page .site-header { height: auto; }
+    .home-page .site-header nav { flex-wrap: wrap; gap: 16px; padding-top: 12px; padding-bottom: 12px; }
+    .home-page .nav-links { display: flex; order: 3; width: 100%; overflow-x: auto; gap: 24px; padding-bottom: 6px; }
+    .home-page [id] { scroll-margin-top: 145px; }
+    .home-page .card-header { flex-direction: column; }
+}
+@media (max-width: 768px) {
+    .home-page .hero { padding: 48px 0; }
+    .home-page .hero h1 { font-size: clamp(28px, 6vw, 42px); }
+    .home-page .hero-desc { font-size: 16px; margin-bottom: 30px; }
+    .home-page section { padding: 48px 0; }
+    .home-page .section-header h2 { font-size: 27px; line-height: 1.45; }
+    .home-page .section-header p { font-size: 16px; }
+    .home-page .overview-grid, .home-page .models-comparison, .home-page .applications-grid, .home-page .testimonials-grid { grid-template-columns: 1fr; }
+    .home-page .feature-row { margin-bottom: 48px; }
+    .home-page .feature-visual { flex: auto; width: 100%; }
+    .home-page .feature-text h2 { font-size: 26px; }
+    .home-page .feature-text p { font-size: 16px; }
+    .home-page .dev-content { align-items: stretch; }
+    .home-page .model-card, .home-page .overview-card, .home-page .app-card, .home-page .testimonial-card { padding: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .home-page *, .home-page *::before, .home-page *::after { transition: none !important; animation: none !important; }
+}
