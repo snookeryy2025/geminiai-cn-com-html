@@ -22,7 +22,7 @@ async function fixture(t, urls = [siteOrigin + '/', siteOrigin + '/models.html']
 test('payload uses the canonical host, public key and deduplicated sitemap URLs', async t => {
     const directory = await fixture(t, [siteOrigin + '/', siteOrigin + '/', siteOrigin + '/models.html']);
     const payload = await createPayload(directory);
-    assert.equal(payload.host, 'www.geminiai-cn.com');
+    assert.equal(payload.host, 'geminiai-cn.com');
     assert.equal(payload.keyLocation, `${siteOrigin}/${keyFileName}`);
     assert.equal(payload.key, key);
     assert.deepEqual(payload.urlList, [siteOrigin + '/', siteOrigin + '/models.html']);
@@ -105,4 +105,42 @@ test('Vercel configuration invokes the guarded build and publishes only dist', a
     assert.equal(config.outputDirectory, 'dist');
     assert.equal(config.cleanUrls, false);
     assert.match(pkg.scripts.build, /--production-only --non-blocking --dist/);
+});
+
+test('nested DNS failure identifies the verification URL and preserves the error code', async t => {
+    const directory = await fixture(t);
+    let requests = 0;
+    const fetchImpl = async () => {
+        requests++;
+        throw new TypeError('fetch failed', { cause: Object.assign(new Error('getaddrinfo ENOTFOUND geminiai-cn.com'), { code: 'ENOTFOUND' }) });
+    };
+    await assert.rejects(submitIndexNow({ directory, fetchImpl, log: quiet }), error => {
+        assert.match(error.message, /读取线上验证文件失败/);
+        assert.ok(error.message.includes(`${siteOrigin}/${keyFileName}`));
+        assert.match(error.message, /ENOTFOUND/);
+        assert.match(error.message, /DNS 解析失败/);
+        return true;
+    });
+    assert.equal(requests, 1);
+});
+
+test('Bing connection failures identify the POST stage and aggregate timeout causes', async t => {
+    const directory = await fixture(t);
+    const fetchImpl = async url => {
+        if (url !== endpoint) return new Response(key);
+        throw new TypeError('fetch failed', { cause: new AggregateError([
+            Object.assign(new Error('connection timed out'), { code: 'ETIMEDOUT' }),
+        ]) });
+    };
+    const result = await submitIndexNow({ directory, fetchImpl, nonBlocking: true, log: quiet });
+    assert.equal(result.status, 'failed');
+    assert.match(result.reason, /提交到 Bing失败/);
+    assert.ok(result.reason.includes(endpoint));
+    assert.match(result.reason, /ETIMEDOUT/);
+    assert.match(result.reason, /请求超时/);
+});
+
+test('HTTP 200 with an outdated key reports content mismatch, not network failure', async t => {
+    const directory = await fixture(t);
+    await assert.rejects(submitIndexNow({ directory, fetchImpl: async () => new Response('old-key'), log: quiet }), /content mismatch/);
 });

@@ -1,6 +1,6 @@
 # Gemini AI CN 静态网站
 
-正式域名：`https://www.geminiai-cn.com`。Node.js 22，无第三方构建依赖。
+正式域名：`https://geminiai-cn.com`。Node.js 22，无第三方构建依赖。
 
 ## 部署到 Vercel
 
@@ -12,7 +12,7 @@
 - 跳过依赖安装（项目无依赖）
 - 保留 `.html` 地址，和 canonical、sitemap 一致
 
-在 Vercel 的 Domains 中绑定 `www.geminiai-cn.com` 并完成 DNS 配置。
+在 Vercel 的 Domains 中绑定 `geminiai-cn.com` 并完成 DNS 配置。
 使用 Production 部署才能自动通知 Bing；Preview 部署和普通本地构建不会提交。
 不需要另配 IndexNow 环境变量，仓库中的验证文件属于公开域名验证文件。
 
@@ -33,7 +33,7 @@
 
 查看 Vercel Build Logs 中的 `[IndexNow] ACCEPTED`、`SKIPPED` 或
 `NOT SUBMITTED/UNCONFIRMED`。200 / 202 只表示接收请求，不保证抓取或收录。
-可在 Bing Webmaster Tools 中登记 `https://www.geminiai-cn.com/sitemap.xml`。
+可在 Bing Webmaster Tools 中登记 `https://geminiai-cn.com/sitemap.xml`。
 
 ## 本地命令
 
@@ -49,3 +49,16 @@ npm test              # 用模拟网络验证成功、失败和环境分支，�
 构建只复制 HTML、css、js、images、robots、sitemap 和验证文件，不公开脚本或仓库配置。
 
 协议参考：[IndexNow 官方文档](https://www.indexnow.org/documentation)。
+
+## 提交失败排查
+
+脚本会显示失败阶段、请求地址与底层网络错误。首先读取正式域名上的验证文件，
+验证通过后才向 Bing 发送 POST，因此验证文件请求失败并不代表 Bing 拒绝。
+
+- `ENOTFOUND` / `EAI_AGAIN`：域名解析失败。确认 Vercel Domains 中已添加 `geminiai-cn.com`，并在域名的 DNS 管理面板配置 Vercel 为该域名实际提供的记录。本站使用不带 `www` 的根域名；还需检查本机 DNS。
+- HTTP 404：新验证文件尚未部署或路由不正确，先完成 Production 部署。
+- HTTP 200 且 `content mismatch`：可能仍是旧 Key、重定向页面或 HTML 回退页，验证地址必须返回当前 Key 的纯文本。
+- `ETIMEDOUT` / `TimeoutError`：检查网络或代理设置后重试。
+- `提交到 Bing失败` 且带 HTTP 状态码：请求已到提交阶段，按 Bing 返回的状态排查验证、请求内容或频率。
+
+验证文件公开可访问后，再运行 `npm run indexnow`。不要为了跳过验证而直接改为另一个域名；如更换正式域名，应同步 canonical、sitemap、robots 和脚本。
