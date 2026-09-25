@@ -45,7 +45,7 @@ npm test              # 用模拟网络验证成功、失败和环境分支，�
 ```
 
 新增页面时更新 `sitemap.xml`，并保持 canonical、robots 和正式域名一致。
-脚本提交 sitemap 中的全部页面，目前为首页、models 页、使用指南页和 Gemini 3.8 国内使用文章页。
+脚本提交 sitemap 中的全部页面，目前为首页、models 页、使用指南页、Gemini 3.8 国内使用文章页和 Gemini 3.1 / 3.8 Flash 指南页。
 构建只复制 HTML、css、js、images、robots、sitemap 和验证文件，不公开脚本或仓库配置。
 
 协议参考：[IndexNow 官方文档](https://www.indexnow.org/documentation)。

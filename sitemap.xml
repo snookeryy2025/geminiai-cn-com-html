@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
       <loc>https://geminiai-cn.com/</loc>
-      <lastmod>2026-09-21</lastmod>
+      <lastmod>2026-09-25</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
@@ -14,13 +14,19 @@
    </url>
    <url>
       <loc>https://geminiai-cn.com/gemini-guide.html</loc>
-      <lastmod>2026-09-21</lastmod>
+      <lastmod>2026-09-25</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
       <loc>https://geminiai-cn.com/gemini-3-8-china-guide-2026.html</loc>
       <lastmod>2026-09-21</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://geminiai-cn.com/gemini-3-1-3-8-flash-china-guide.html</loc>
+      <lastmod>2026-09-25</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
