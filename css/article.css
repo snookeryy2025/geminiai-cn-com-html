@@ -90,6 +90,23 @@
 .article-page .sidebar-note p { margin: 10px 0 18px; color: var(--article-muted); line-height: 1.8; }
 .article-page .sidebar-note a { color: var(--primary-color); }
 .article-page .site-footer { background: var(--article-bg); }
+.article-page .article-content a { color: var(--primary-color); text-underline-offset: 3px; }
+.article-page .article-content a:hover { text-decoration-thickness: 2px; }
+.article-page .article-content .article-note { margin: 22px 0; padding: 16px 18px; border-left: 3px solid #7b91b5; background: var(--article-surface); color: #46556a; font-size: 14px; line-height: 1.8; }
+.article-page .article-content ol, .article-page .article-content ul { padding-left: 26px; }
+.article-page .article-content li { padding-left: 4px; margin-top: 10px; }
+.article-page .article-content li::marker { color: var(--primary-color); }
+.article-page .table-scroll { overflow-x: auto; margin: 22px 0; border: 1px solid var(--article-border); }
+.article-page .article-content table { width: 100%; min-width: 600px; border-collapse: collapse; font-size: 14px; line-height: 1.7; }
+.article-page .article-content th, .article-page .article-content td { border-bottom: 1px solid var(--article-border); padding: 12px 14px; text-align: left; vertical-align: top; }
+.article-page .article-content thead th { background: var(--article-surface); color: var(--text-color); font-weight: 650; }
+.article-page .article-content tbody tr:last-child th, .article-page .article-content tbody tr:last-child td { border-bottom: 0; }
+.article-page .article-content tbody th { color: #263449; font-weight: 600; }
+.article-page .article-faq h3 { margin-top: 26px; }
+.article-page .article-faq h3:first-child { margin-top: 0; }
+.article-page .article-faq p { margin-top: 8px; }
+.article-page .article-content .article-references ul { padding-left: 22px; }
+.article-page .article-content .article-references li { margin-top: 10px; }
 @media (max-width: 1100px) {
     .article-page .site-header { height: auto; }
     .article-page .site-header nav { flex-wrap: wrap; gap: 12px; padding-top: 12px; padding-bottom: 12px; }
@@ -118,6 +135,7 @@
     .article-page .platform-grid { grid-template-columns: 1fr; }
     .article-page .platform-card { padding: 20px; }
     .article-page .official-entry { padding: 18px; }
+    .article-page .article-content th, .article-page .article-content td { padding: 10px 12px; }
     .article-page .site-header .btn { padding: 9px 16px; font-size: 13px; }
 }
 @media (prefers-reduced-motion: reduce) {
