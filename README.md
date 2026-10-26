@@ -43,7 +43,7 @@ npm test              # 用模拟网络验证成功、失败和环境分支，�
 ```
 
 新增页面时更新 `sitemap.xml`，并保持 canonical、robots 和正式域名一致。
-脚本提交 sitemap 中的全部页面，目前为首页、models 页、使用指南页、Gemini 3.8 国内使用文章页和 Gemini 3.1 / 3.8 Flash 指南页。
+脚本提交 sitemap 中的全部页面，目前为首页、models 页、使用指南页、Gemini 3.8 模型文章页和 Gemini 3.1 / 3.8 Flash 指南页。
 构建只复制 HTML、css、js、images、robots、sitemap 和验证文件，不公开脚本或仓库配置。
 
 协议参考：[IndexNow 官方文档](https://www.indexnow.org/documentation)。
@@ -56,7 +56,7 @@ npm test              # 用模拟网络验证成功、失败和环境分支，�
 - `ENOTFOUND` / `EAI_AGAIN`：域名解析失败。确认 Vercel Domains 中已添加 `geminiai-cn.com`，并在域名的 DNS 管理面板配置 Vercel 为该域名实际提供的记录。本站使用不带 `www` 的根域名；还需检查本机 DNS。
 - HTTP 404：新验证文件尚未部署或路由不正确，先完成 Production 部署。
 - HTTP 200 且 `content mismatch`：可能仍是旧 Key、重定向页面或 HTML 回退页，验证地址必须返回当前 Key 的纯文本。
-- `ETIMEDOUT` / `TimeoutError`：检查网络或代理设置后重试。
+- `ETIMEDOUT` / `TimeoutError`：检查网络连接和运行环境设置后重试。
 - `提交到 Bing失败` 且带 HTTP 状态码：请求已到提交阶段，按 Bing 返回的状态排查验证、请求内容或频率。
 
 验证文件公开可访问后，再运行 `npm run indexnow`。不要为了跳过验证而直接改为另一个域名；如更换正式域名，应同步 canonical、sitemap、robots 和脚本。

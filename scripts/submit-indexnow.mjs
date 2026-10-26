@@ -21,7 +21,7 @@ function requestError(error, stage, url) {
     if (/ENOTFOUND|EAI_AGAIN/.test(reason)) {
         hint = ' DNS 解析失败：请核对域名的 DNS 记录、Vercel Domains 绑定以及本机 DNS/网络。';
     } else if (/TIMEOUT|ETIMEDOUT|TimeoutError/.test(reason)) {
-        hint = ' 请求超时：请检查网络连接或代理配置后重试。';
+        hint = ' 请求超时：请检查网络连接或运行环境设置后重试。';
     }
     return new Error(`${stage}失败：${url}\n${reason}${hint}`, { cause: error });
 }
