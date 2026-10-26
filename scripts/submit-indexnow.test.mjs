@@ -104,7 +104,8 @@ test('Vercel configuration invokes the guarded build and publishes only dist', a
     assert.equal(config.buildCommand, 'npm run build');
     assert.equal(config.outputDirectory, 'dist');
     assert.equal(config.cleanUrls, false);
-    assert.match(pkg.scripts.build, /--production-only --non-blocking --dist/);
+    assert.equal(pkg.scripts.build, 'node scripts/build.mjs');
+    assert.equal(pkg.scripts['indexnow:production'], 'node scripts/submit-indexnow.mjs --dist');
 });
 
 test('nested DNS failure identifies the verification URL and preserves the error code', async t => {

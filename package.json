@@ -5,7 +5,8 @@
   "type": "module",
   "engines": { "node": "22.x" },
   "scripts": {
-    "build": "node scripts/build.mjs && node scripts/submit-indexnow.mjs --production-only --non-blocking --dist",
+    "build": "node scripts/build.mjs",
+    "indexnow:production": "node scripts/submit-indexnow.mjs --dist",
     "indexnow": "node scripts/submit-indexnow.mjs",
     "indexnow:dry": "node scripts/submit-indexnow.mjs --dry-run",
     "test": "node --test scripts/submit-indexnow.test.mjs"
