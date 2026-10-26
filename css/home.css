@@ -6,6 +6,9 @@
 .home-page .hero h1 { line-height: 1.25; }
 .home-page .hero-desc { max-width: 850px; line-height: 1.85; font-size: 18px; }
 .home-page .hero-desc strong { color: var(--text-color); font-weight: 600; }
+.home-page .home-disclaimer { padding: 16px 0; border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); background: rgba(255, 255, 255, 0.035); }
+.home-page .home-disclaimer p { color: var(--text-light); font-size: 14px; line-height: 1.8; }
+.home-page .home-disclaimer strong { color: var(--text-color); margin-right: 8px; }
 .home-page .nav-links { gap: 20px; }
 .home-page .site-header .btn, .home-page .logo, .home-page .nav-links a { white-space: nowrap; }
 .home-page .section-header { margin-bottom: 40px; }
